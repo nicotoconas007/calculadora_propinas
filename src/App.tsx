@@ -6,7 +6,7 @@ import OrderContents from "./components/OrderContents"
 
 function App() {
 
-  const { order, addItem } = userOrder()
+  const { order, addItem, removeItem } = userOrder()
   
   return (
     <>
@@ -30,6 +30,7 @@ function App() {
         <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
           <OrderContents 
             order={order}
+            removeItem={removeItem}
           />
         </div>    
       </main>
