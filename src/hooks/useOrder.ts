@@ -18,9 +18,8 @@ export default function userOrder () {
         }
     }
 
-    console.log(order)
-
     return {
+        order,
         addItem
     }
 }

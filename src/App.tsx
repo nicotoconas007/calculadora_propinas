@@ -1,16 +1,16 @@
 import { menuItems } from "./data/db"
 import MenuItem from "./components/MenuItem"
 import userOrder from "./hooks/useOrder"
+import OrderContents from "./components/OrderContents"
 
 
 function App() {
 
-
-  const { addItem } = userOrder()
+  const { order, addItem } = userOrder()
   
   return (
     <>
-      <header className="bg-teal-400 py-5">
+      <header className="bg-slate-950 py-5 text-white">
         <h1 className="text-center text-4xl font-black">Calculadora de Propinas y Consumo</h1>
       </header>
 
@@ -27,8 +27,10 @@ function App() {
           ))}
           </div>       
         </div>
-        <div>
-          <h2>Consumo</h2>
+        <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
+          <OrderContents 
+            order={order}
+          />
         </div>    
       </main>
     </>
