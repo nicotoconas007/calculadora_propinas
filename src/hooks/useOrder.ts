@@ -3,6 +3,7 @@ import { MenuItem, OrderItem } from "../types"
 
 export default function userOrder () {
     const [order, setOrder] = useState<OrderItem[]>([])
+    const [tip, setTip] = useState(0)
 
     const addItem = (item : MenuItem) => {
 
@@ -24,6 +25,8 @@ export default function userOrder () {
 
     return {
         order,
+        tip,
+        setTip,
         addItem,
         removeItem
     }
